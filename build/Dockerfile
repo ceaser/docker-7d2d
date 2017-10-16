@@ -23,7 +23,7 @@ RUN set -x \
 	&& apt-get install -y --no-install-recommends \
 		lib32stdc++6 \
 		libcurl4-gnutls-dev:i386 \
-    net-tools \
+    netcat \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/apt/apt.conf.d/01proxy
 
