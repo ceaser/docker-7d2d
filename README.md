@@ -19,7 +19,7 @@ Here is an example of a docker run line that exposes all ports and mounts the da
 docker run -it -p '26900:26900/tcp' -p '26900-26902:26900-26902/udp' -p '8080-8082:8080-8082/tcp' -v `pwd`/data:'/data' 7d2d
 ```
 
-In the previous example you could can start, stop. edit the data/serverconfig.xml file and then restart. But using the SERVERCONFIG_OVERRIDE ENV variable you can just start from an existing file.
+In the previous example you could start, stop. edit the data/serverconfig.xml file and then restart. But using the SERVERCONFIG_OVERRIDE ENV variable you can just start from an existing file.
 
 env
 ```SHELL
