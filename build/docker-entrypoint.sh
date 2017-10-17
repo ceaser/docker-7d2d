@@ -34,7 +34,8 @@ if [ "$1" = 'startserver.sh' ]; then
   SD2D_DATA=/data/7DaysToDie
   SD2D_STEAM_SAVE=$STEAM_HOME/.local/share/7DaysToDie
   mkdir -p $SD2D_DATA `dirname $SD2D_STEAM_SAVE`
-  ln -s $SD2D_DATA $STEAM_HOME/.local/share/7DaysToDie
+  rm -rf $STEAM_HOME/.local/share/7DaysToDie
+  ln -sf $SD2D_DATA $STEAM_HOME/.local/share/7DaysToDie
 
 
   # Link Log file
