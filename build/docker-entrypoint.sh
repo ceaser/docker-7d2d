@@ -34,7 +34,8 @@ if [ "$1" = 'startserver.sh' ]; then
   SD2D_DATA=/data/7DaysToDie
   SD2D_STEAM_SAVE=$STEAM_HOME/.local/share/7DaysToDie
   mkdir -p $SD2D_DATA `dirname $SD2D_STEAM_SAVE`
-  ln -s $SD2D_DATA $STEAM_HOME/.local/share/7DaysToDie
+  rm -rf $STEAM_HOME/.local/share/7DaysToDie
+  ln -sf $SD2D_DATA $STEAM_HOME/.local/share/7DaysToDie
 
 
   # Link Log file
@@ -48,10 +49,6 @@ if [ "$1" = 'startserver.sh' ]; then
   # Run via steam user if the command is `startserver.sh`.
   cd $SD2D_HOME
   set -- gosu $STEAM_USER "./$@"
-fi
-
-if [ "$1" = 'watchlog' ]; then
-  set -- tail -f "$SD2D_HOME/7DaysToDieServer_Data/output_log*.txt "
 fi
 
 # Execute the command.
