@@ -1,8 +1,6 @@
 # docker-7d2d
 Linux Dedicated Server for the Video Game 7 Days to Die using Docker
 
-[![dst-academy GitHub](https://img.shields.io/github/release/dst-academy/docker-dontstarvetogether.svg)](https://github.com/dst-academy/docker-dontstarvetogether/releases/latest)
-
 ## Features
 - [x] **serverconfig.xml** through a **ENV** variables.
 - [x] **World-persistence** on container destruction.
