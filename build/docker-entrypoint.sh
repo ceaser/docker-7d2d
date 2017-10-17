@@ -50,9 +50,5 @@ if [ "$1" = 'startserver.sh' ]; then
   set -- gosu $STEAM_USER "./$@"
 fi
 
-if [ "$1" = 'watchlog' ]; then
-  set -- tail -f "$SD2D_HOME/7DaysToDieServer_Data/output_log*.txt "
-fi
-
 # Execute the command.
 exec "$@"
