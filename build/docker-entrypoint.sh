@@ -45,6 +45,17 @@ if [ "$1" = 'startserver.sh' ]; then
   chown -R $STEAM_USER:$STEAM_USER -R /data
   chown -R $STEAM_USER:$STEAM_USER -R $STEAM_HOME/.local
 
+  # Update
+  gosu $STEAM_USER steamcmd \
+    +@ShutdownOnFailedCommand 1 \
+    +login anonymous \
+    +force_install_dir $SD2D_HOME \
+    +app_update 294420 \
+			$([ -n "$SD2D_BRANCH" ] && printf %s "-beta $SD2D_BRANCH") \
+			$([ -n "$SD2D_BRANCH_PASSWORD" ] && printf %s "-betapassword $SD2D_BRANCH_PASSWORD") \
+    validate \
+    +quit
+
   # Run via steam user if the command is `startserver.sh`.
   cd $SD2D_HOME
   set -- gosu $STEAM_USER "./$@"
