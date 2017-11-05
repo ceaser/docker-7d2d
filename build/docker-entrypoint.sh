@@ -5,7 +5,6 @@ set -e
 
 # Run start command if only options given.
 if [ "${1:0:1}" = '-' ]; then
-#  set -- dst-server start "$@"
   set -- startserver.sh -configfile=serverconfig.xml
 fi
 
